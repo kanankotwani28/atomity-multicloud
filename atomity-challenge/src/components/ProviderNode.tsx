@@ -74,13 +74,23 @@ export default function ProviderNode({
           scale: isActive ? 1.06 : 1,
         }}
         transition={{
-          delay: index * 0.12 + 0.3,
-          type: "spring",
-          stiffness: 200,
-          damping: 22,
+          x: {
+            delay: index * 0.12 + 0.3,
+            type: "spring",
+            stiffness: 200,
+            damping: 22,
+          },
+          y: {
+            delay: index * 0.12 + 0.3,
+            type: "spring",
+            stiffness: 200,
+            damping: 22,
+          },
+          opacity: { duration: 0.12, ease: "easeOut" },
+          scale: { duration: 0.12, ease: "easeOut" },
         }}
         whileHover={{ scale: isActive ? 1.08 : 1.04 }}
-        whileTap={{ scale: 0.97 }}
+        whileTap={{ scale: 0.985 }}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -151,9 +161,8 @@ export default function ProviderNode({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
                   delay: index * 0.12 + 0.5 + i * 0.1,
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
+                  duration: 0.2,
+                  ease: "easeOut",
                 }}
                 style={{
                   width: "16px",

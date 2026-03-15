@@ -20,20 +20,22 @@ export default function ProviderPopup({
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.92, y: position.startsWith("top") ? -8 : 8 }}
+      initial={{ opacity: 0, scale: 0.97, y: position.startsWith("top") ? -4 : 4 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.96, y: position.startsWith("top") ? -6 : 6 }}
-      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      exit={{ opacity: 0, scale: 0.985, y: position.startsWith("top") ? -3 : 3 }}
+      transition={{ duration: 0.12, ease: [0.22, 1, 0.36, 1] }}
       style={{
         position: "absolute",
         width: "min(280px, 72vw)",
         ...popupAnchor,
         padding: "14px",
         borderRadius: "16px",
-        background: "var(--gradient-surface)",
-        border: `1px solid ${providerColor}`,
-        boxShadow: `0 16px 34px color-mix(in srgb, ${providerColor} 18%, transparent)`,
-        backdropFilter: "blur(14px)",
+        background: `linear-gradient(180deg,
+          color-mix(in srgb, var(--color-bg-primary) 95%, ${providerColor} 5%),
+          color-mix(in srgb, var(--color-bg-secondary) 97%, ${providerColor} 3%)
+        )`,
+        border: `1px solid color-mix(in srgb, ${providerColor} 42%, var(--color-border))`,
+        boxShadow: `0 18px 38px color-mix(in srgb, ${providerColor} 16%, transparent), 0 10px 24px rgba(0, 0, 0, 0.12)`,
         zIndex: 40,
       }}
     >
@@ -97,8 +99,9 @@ export default function ProviderPopup({
             style={{
               borderRadius: "12px",
               padding: "10px 8px",
-              backgroundColor: "color-mix(in srgb, var(--color-accent-primary) 8%, transparent)",
-              border: `1px solid ${tokens.colors.border}`,
+              backgroundColor:
+                "color-mix(in srgb, var(--color-bg-primary) 90%, var(--color-accent-primary) 10%)",
+              border: `1px solid color-mix(in srgb, ${providerColor} 16%, var(--color-border))`,
               textAlign: "center",
             }}
           >
@@ -158,7 +161,8 @@ export default function ProviderPopup({
                 width: "100%",
                 minWidth: "64px",
                 borderRadius: "999px",
-                backgroundColor: "color-mix(in srgb, var(--color-accent-primary) 10%, transparent)",
+                backgroundColor:
+                  "color-mix(in srgb, var(--color-bg-primary) 88%, var(--color-accent-primary) 12%)",
                 overflow: "hidden",
               }}
             >
