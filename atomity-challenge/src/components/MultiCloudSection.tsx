@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { tokens, providers, type ProviderId } from "../tokens";
 import { useCloudData } from "../hooks/useCloudData";
 import { TopologyLoadingSkeleton } from "./Skeleton";
@@ -72,7 +71,6 @@ export default function MultiCloudSection() {
         marginInline: "auto",
       }}
     >
-      {/* Section header */}
       <div
         style={{
           textAlign: "center",
@@ -104,10 +102,7 @@ export default function MultiCloudSection() {
             marginBottom: "12px",
           }}
         >
-          One view.{" "}
-          <span style={{ color: tokens.colors.accentPrimary }}>
-            Every cloud.
-          </span>
+          One view. <span style={{ color: tokens.colors.accentPrimary }}>Every cloud.</span>
         </motion.h2>
 
         <motion.p
@@ -124,8 +119,7 @@ export default function MultiCloudSection() {
           }}
         >
           See your AWS, Azure, Google Cloud, and on-premise costs in a single
-          interactive topology — with resource-level breakdown and real-time
-          trends.
+          interactive topology - with resource-level breakdown and real-time trends.
         </motion.p>
 
         <motion.p
@@ -138,11 +132,10 @@ export default function MultiCloudSection() {
             fontFamily: "'Inter', sans-serif",
           }}
         >
-          ↑ Click any provider to focus its breakdown
+          Tap any provider to open its data card
         </motion.p>
       </div>
 
-      {/* Topology grid */}
       <div
         style={{
           position: "relative",
@@ -155,7 +148,6 @@ export default function MultiCloudSection() {
         }}
         className="topology-grid"
       >
-        {/* Connection lines (desktop only) */}
         <div
           style={{
             position: "absolute",
@@ -168,9 +160,9 @@ export default function MultiCloudSection() {
           <ConnectionLines activeProvider={activeProvider} />
         </div>
 
-        {/* Provider nodes */}
         {providerIds.map((id, index) => {
           const providerData = data.providers.find((p) => p.id === id)!;
+
           return (
             <div
               key={id}
@@ -191,7 +183,6 @@ export default function MultiCloudSection() {
           );
         })}
 
-        {/* Cost Panel (center) */}
         <div
           style={{
             gridArea: "1 / 2 / 4 / 3",
@@ -199,7 +190,9 @@ export default function MultiCloudSection() {
             display: "flex",
             justifyContent: "center",
           }}
-          className="col-span-full lg:col-auto"
+          className={`col-span-full lg:col-auto cost-panel-shell${
+            activeProvider ? " cost-panel-hidden-mobile" : ""
+          }`}
         >
           <CostPanel
             activeProvider={activeProvider}
@@ -209,7 +202,6 @@ export default function MultiCloudSection() {
         </div>
       </div>
 
-      {/* Bottom summary bar */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +221,6 @@ export default function MultiCloudSection() {
           boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
         }}
       >
-        {/* Left side */}
         <div>
           <div
             style={{
@@ -239,7 +230,7 @@ export default function MultiCloudSection() {
               marginBottom: "4px",
             }}
           >
-            Total multi-cloud spend · Last 30 days
+            Total multi-cloud spend - Last 30 days
           </div>
           <div
             style={{
@@ -253,7 +244,6 @@ export default function MultiCloudSection() {
           </div>
         </div>
 
-        {/* Provider chips */}
         <div
           style={{
             display: "flex",
@@ -272,9 +262,7 @@ export default function MultiCloudSection() {
                 padding: "6px 14px",
                 borderRadius: "9999px",
                 border: `1px solid ${
-                  activeProvider === p.id
-                    ? providers[p.id].color
-                    : tokens.colors.border
+                  activeProvider === p.id ? providers[p.id].color : tokens.colors.border
                 }`,
                 backgroundColor:
                   activeProvider === p.id
@@ -312,7 +300,6 @@ export default function MultiCloudSection() {
         </div>
       </motion.div>
 
-      {/* Responsive styles */}
       <style>{`
         @media (max-width: 1023px) {
           .topology-grid {
@@ -339,6 +326,9 @@ export default function MultiCloudSection() {
           .topology-grid {
             grid-template-columns: 1fr !important;
             grid-template-rows: repeat(5, auto) !important;
+          }
+          .cost-panel-hidden-mobile {
+            display: none !important;
           }
           .topology-grid > div:nth-child(1) { grid-area: 1 / 1 !important; }
           .topology-grid > div:nth-child(2) { grid-area: 2 / 1 !important; }
