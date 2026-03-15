@@ -1,4 +1,4 @@
-import { ThemeProvider } from "./hooks/useTheme";
+import { ThemeProvider } from "./hooks/ThemeProvider";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import MultiCloudSection from "./components/MultiCloudSection";

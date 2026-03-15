@@ -204,12 +204,16 @@ export default function CostPanel({
                     className="resource-bar"
                     initial={{ height: "4%" }}
                     animate={{ height: `${Math.max(pct, 4)}%` }}
+                    whileHover={{
+                      scaleX: 1.06,
+                      backgroundColor: display.color,
+                      boxShadow: `0 0 16px color-mix(in srgb, ${display.color} 50%, transparent)`,
+                    }}
                     transition={{
                       delay: index * 0.09 + 0.5,
                       duration: 0.7,
                       ease: [0.16, 1, 0.3, 1],
                     }}
-                    whileHover={{ scaleX: 1.06 }}
                     style={{
                       width: "70%",
                       borderRadius: "4px 4px 2px 2px",
@@ -217,20 +221,6 @@ export default function CostPanel({
                       cursor: "pointer",
                       position: "relative",
                       overflow: "hidden",
-                    }}
-                    onHoverStart={(_, info) => {
-                      const el = (info as any)?.target || null;
-                      if (el) {
-                        el.style.backgroundColor = display.color;
-                        el.style.boxShadow = `0 0 16px color-mix(in srgb, ${display.color} 50%, transparent)`;
-                      }
-                    }}
-                    onHoverEnd={(_, info) => {
-                      const el = (info as any)?.target || null;
-                      if (el) {
-                        el.style.backgroundColor = `color-mix(in srgb, ${display.color} 72%, transparent)`;
-                        el.style.boxShadow = "none";
-                      }
                     }}
                   />
                 </div>
