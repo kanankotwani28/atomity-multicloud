@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@tanstack/react-query": "^5.90.21",
+    "framer-motion": "^12.36.0",
     "i": "^0.3.7"
   }
 }
