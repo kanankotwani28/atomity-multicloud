@@ -53,6 +53,13 @@ export default function MultiCloudSection() {
         marginInline: "auto",
       }}
     >
+      <MultiCloudSummaryBar
+        activeProvider={activeProvider}
+        providersData={data.providers}
+        totalCost={data.totalCost}
+        onToggle={toggle}
+      />
+
       <MultiCloudHeader isInView={isInView} />
 
       <div
@@ -120,13 +127,6 @@ export default function MultiCloudSection() {
           />
         </div>
       </div>
-
-      <MultiCloudSummaryBar
-        activeProvider={activeProvider}
-        providersData={data.providers}
-        totalCost={data.totalCost}
-        onToggle={toggle}
-      />
 
       <style>{`
         @media (max-width: 1023px) {

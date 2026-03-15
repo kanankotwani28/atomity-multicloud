@@ -23,7 +23,6 @@ export default function MultiCloudSummaryBar({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
       style={{
-        marginTop: "clamp(2rem, 4vw, 3rem)",
         background: "var(--gradient-surface)",
         borderRadius: "14px",
         border: `1px solid ${tokens.colors.border}`,
