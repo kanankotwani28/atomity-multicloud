@@ -68,11 +68,12 @@
 
 /* Base body styles */
 body {
-  background-color: var(--color-bg-primary);
+  background: var(--gradient-page);
   color: var(--color-text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 /* Google Fonts import */

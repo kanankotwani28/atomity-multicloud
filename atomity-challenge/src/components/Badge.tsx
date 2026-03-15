@@ -16,17 +16,17 @@ const variantStyles: Record<
   { bg: string; color: string; border: string }
 > = {
   success: {
-    bg: `color-mix(in srgb, ${tokens.colors.accentSuccess} 15%, transparent)`,
+    bg: `color-mix(in srgb, ${tokens.colors.accentSuccess} 12%, transparent)`,
     color: tokens.colors.accentSuccess,
     border: `color-mix(in srgb, ${tokens.colors.accentSuccess} 30%, transparent)`,
   },
   error: {
-    bg: `color-mix(in srgb, ${tokens.colors.accentError} 15%, transparent)`,
+    bg: `color-mix(in srgb, ${tokens.colors.accentError} 12%, transparent)`,
     color: tokens.colors.accentError,
     border: `color-mix(in srgb, ${tokens.colors.accentError} 30%, transparent)`,
   },
   warning: {
-    bg: `color-mix(in srgb, ${tokens.colors.accentWarning} 15%, transparent)`,
+    bg: `color-mix(in srgb, ${tokens.colors.accentWarning} 12%, transparent)`,
     color: tokens.colors.accentWarning,
     border: `color-mix(in srgb, ${tokens.colors.accentWarning} 30%, transparent)`,
   },

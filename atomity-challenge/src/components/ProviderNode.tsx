@@ -89,11 +89,11 @@ function ProviderLogo({ id }: { id: ProviderId }) {
     case "gcp":
       return (
         <svg width="80" height="40" viewBox="0 0 80 40" fill="none" aria-hidden="true">
-          {/* Google Cloud colored dots - larger */}
-          <circle cx="14" cy="14" r="6" fill="#EA4335" />
-          <circle cx="26" cy="14" r="6" fill="#4285F4" />
-          <circle cx="20" cy="26" r="6" fill="#34A853" />
-          <circle cx="8" cy="26" r="6" fill="#FBBC05" />
+          {/* Unified orange cloud dots */}
+          <circle cx="14" cy="14" r="6" fill="var(--color-gcp)" />
+          <circle cx="26" cy="14" r="6" fill="var(--color-accent-primary)" />
+          <circle cx="20" cy="26" r="6" fill="var(--color-azure)" />
+          <circle cx="8" cy="26" r="6" fill="var(--color-onprem)" />
           {/* Google Cloud text */}
           <text
             x="54"
@@ -145,7 +145,7 @@ function ProviderLogo({ id }: { id: ProviderId }) {
             </g>
           ))}
           {/* Status LED */}
-          <circle cx="10" cy="35" r="1.2" fill="#22d46a" />
+          <circle cx="10" cy="35" r="1.2" fill="var(--color-accent-primary)" />
           {/* Text */}
           <text
             x="56"
@@ -233,12 +233,12 @@ export default function ProviderNode({
           height: "clamp(100px, 14vw, 148px)",
           clipPath:
             "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-          backgroundColor: tokens.colors.surface,
+          background: "var(--gradient-surface)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           boxShadow: isActive
-            ? `0 0 24px color-mix(in srgb, ${providerColor} 40%, transparent)`
+            ? `0 10px 28px color-mix(in srgb, ${providerColor} 24%, transparent)`
             : "0 2px 12px rgba(0,0,0,0.06)",
         }}
       >

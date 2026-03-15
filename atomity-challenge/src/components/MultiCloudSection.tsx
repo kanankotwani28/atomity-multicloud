@@ -217,7 +217,7 @@ export default function MultiCloudSection() {
         transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
           marginTop: "clamp(2rem, 4vw, 3rem)",
-          backgroundColor: tokens.colors.surface,
+          background: "var(--gradient-surface)",
           borderRadius: "14px",
           border: `1px solid ${tokens.colors.border}`,
           padding: "20px 28px",

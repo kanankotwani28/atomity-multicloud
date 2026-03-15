@@ -33,7 +33,8 @@ export default function HeroSection() {
         paddingTop: "80px",
         position: "relative",
         overflow: "hidden",
-        background: `radial-gradient(ellipse 60% 50% at 50% 80%, color-mix(in srgb, ${tokens.colors.accentPrimary} 8%, transparent), transparent), ${tokens.colors.bgPrimary}`,
+        background:
+          "radial-gradient(ellipse 60% 50% at 50% 78%, color-mix(in srgb, var(--color-accent-primary) 18%, transparent), transparent), var(--gradient-page)",
       }}
     >
       <motion.div
@@ -80,7 +81,7 @@ export default function HeroSection() {
           <span
             style={{
               color: tokens.colors.accentPrimary,
-              textShadow: `0 0 40px color-mix(in srgb, ${tokens.colors.accentPrimary} 40%, transparent)`,
+              textShadow: `0 10px 28px color-mix(in srgb, ${tokens.colors.accentPrimary} 24%, transparent)`,
             }}
           >
             understand.
@@ -117,8 +118,8 @@ export default function HeroSection() {
               alignItems: "center",
               padding: "14px 32px",
               borderRadius: "9999px",
-              backgroundColor: tokens.colors.accentPrimary,
-              color: "#0d0f12",
+              background: "var(--gradient-accent)",
+              color: "#fff7ef",
               fontSize: "0.95rem",
               fontWeight: 600,
               fontFamily: "'Inter', sans-serif",
@@ -138,7 +139,7 @@ export default function HeroSection() {
               alignItems: "center",
               padding: "14px 32px",
               borderRadius: "9999px",
-              backgroundColor: tokens.colors.surface,
+              background: "var(--gradient-surface)",
               color: tokens.colors.textPrimary,
               fontSize: "0.95rem",
               fontWeight: 500,

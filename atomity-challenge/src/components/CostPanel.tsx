@@ -71,10 +71,10 @@ export default function CostPanel({
       style={{
         width: "clamp(260px, 38vw, 460px)",
         borderRadius: "16px",
-        backgroundColor: tokens.colors.surface,
+        background: "var(--gradient-surface)",
         border: `1.5px solid ${activeProvider ? display.color : tokens.colors.border}`,
         boxShadow: activeProvider
-          ? `0 0 30px color-mix(in srgb, ${display.color} 20%, transparent), 0 4px 20px rgba(0,0,0,0.08)`
+          ? `0 12px 30px color-mix(in srgb, ${display.color} 18%, transparent), 0 4px 20px rgba(0,0,0,0.08)`
           : "0 4px 20px rgba(0,0,0,0.06)",
         overflow: "hidden",
         position: "relative",
