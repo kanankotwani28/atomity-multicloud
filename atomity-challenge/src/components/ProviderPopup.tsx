@@ -30,13 +30,17 @@ export default function ProviderPopup({
         ...popupAnchor,
         padding: "14px",
         borderRadius: "16px",
-        background: `linear-gradient(180deg,
-          color-mix(in srgb, var(--color-bg-primary) 95%, ${providerColor} 5%),
-          color-mix(in srgb, var(--color-bg-secondary) 97%, ${providerColor} 3%)
+        backgroundColor: "var(--color-bg-primary)",
+        backgroundImage: `linear-gradient(180deg,
+          color-mix(in srgb, var(--color-bg-primary) 100%, ${providerColor} 0%),
+          color-mix(in srgb, var(--color-bg-secondary) 100%, ${providerColor} 0%)
         )`,
-        border: `1px solid color-mix(in srgb, ${providerColor} 42%, var(--color-border))`,
-        boxShadow: `0 18px 38px color-mix(in srgb, ${providerColor} 16%, transparent), 0 10px 24px rgba(0, 0, 0, 0.12)`,
-        zIndex: 40,
+        border: `1px solid color-mix(in srgb, ${providerColor} 46%, var(--color-border))`,
+        boxShadow: `0 20px 40px color-mix(in srgb, ${providerColor} 14%, transparent), 0 12px 28px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.4)`,
+        isolation: "isolate",
+        overflow: "hidden",
+        opacity: 1,
+        zIndex: 60,
       }}
     >
       <div
@@ -100,7 +104,7 @@ export default function ProviderPopup({
               borderRadius: "12px",
               padding: "10px 8px",
               backgroundColor:
-                "color-mix(in srgb, var(--color-bg-primary) 90%, var(--color-accent-primary) 10%)",
+                "color-mix(in srgb, var(--color-bg-primary) 96%, var(--color-accent-primary) 4%)",
               border: `1px solid color-mix(in srgb, ${providerColor} 16%, var(--color-border))`,
               textAlign: "center",
             }}
@@ -162,7 +166,7 @@ export default function ProviderPopup({
                 minWidth: "64px",
                 borderRadius: "999px",
                 backgroundColor:
-                  "color-mix(in srgb, var(--color-bg-primary) 88%, var(--color-accent-primary) 12%)",
+                  "color-mix(in srgb, var(--color-bg-secondary) 96%, var(--color-accent-primary) 4%)",
                 overflow: "hidden",
               }}
             >

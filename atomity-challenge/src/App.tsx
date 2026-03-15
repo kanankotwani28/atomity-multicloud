@@ -24,7 +24,6 @@ export default function App() {
           fontSize: "0.8rem",
         }}
       >
-        © 2025 Atomity GmbH
       </footer>
     </ThemeProvider>
   );
