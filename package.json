@@ -1,7 +1,10 @@
 {
-  "dependencies": {
-    "@tanstack/react-query": "^5.90.21",
-    "framer-motion": "^12.36.0",
-    "i": "^0.3.7"
+  "private": true,
+  "scripts": {
+    "install:app": "npm --prefix atomity-challenge install",
+    "dev": "npm --prefix atomity-challenge run dev",
+    "build": "npm --prefix atomity-challenge run build",
+    "lint": "npm --prefix atomity-challenge run lint",
+    "preview": "npm --prefix atomity-challenge run preview"
   }
 }

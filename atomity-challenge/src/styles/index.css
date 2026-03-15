@@ -1,5 +1,4 @@
 @import "./variables.css";
-@import "tailwindcss";
 
 /* Fluid type scale */
 .text-fluid-xs   { font-size: clamp(0.7rem,  0.65rem + 0.25vw, 0.8rem); }
