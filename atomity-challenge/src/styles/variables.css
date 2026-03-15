@@ -1,0 +1,34 @@
+:root {
+  --color-bg-primary: #f4f5f7;
+  --color-bg-secondary: #ebedf0;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-text-primary: #0d0f12;
+  --color-text-secondary: #3d4352;
+  --color-text-muted: #8a91a3;
+  --color-accent-primary: #22d46a;
+  --color-accent-primary-10: color-mix(in srgb, #22d46a 12%, transparent);
+  --color-accent-success: #16a34a;
+  --color-accent-error: #dc2626;
+  --color-accent-warning: #d97706;
+  --color-border: #e4e7ed;
+  --color-border-accent: color-mix(in srgb, #22d46a 40%, transparent);
+  --color-aws: #ff9900;
+  --color-azure: #0078d4;
+  --color-gcp: #4285f4;
+  --color-onprem: #6b7280;
+}
+
+.dark {
+  --color-bg-primary: #080a0e;
+  --color-bg-secondary: #0d1018;
+  --color-surface: #111318;
+  --color-surface-elevated: #181b22;
+  --color-text-primary: #f0f2f7;
+  --color-text-secondary: #9aa3b8;
+  --color-text-muted: #4d5668;
+  --color-accent-primary: #22d46a;
+  --color-accent-primary-10: color-mix(in srgb, #22d46a 15%, transparent);
+  --color-border: #1e222e;
+  --color-border-accent: color-mix(in srgb, #22d46a 30%, transparent);
+}
