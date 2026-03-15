@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "npm --prefix atomity-challenge install",
     "install:app": "npm --prefix atomity-challenge install",
     "dev": "npm --prefix atomity-challenge run dev",
     "build": "npm --prefix atomity-challenge run build",
